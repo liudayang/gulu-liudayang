@@ -15,3 +15,50 @@ new Vue({
     loading3: false
   }
 });
+import {expect} from 'chai';
+
+{
+  // const Construtor=Vue.extend(Button)
+  // const button=new Construtor({
+  //   propsData:{
+  //     icon:'settings',
+  //     loading:true
+  //   }
+  // })
+  // button.$mount('#test')
+  // const useElement=button.$el.querySelector('use')
+  // const href=useElement.getAttribute('xlink:href')
+  // expect(href).to.eq('#ldy-settings')
+// console.log(button.$el);
+//   console.log(button);
+}
+
+{
+  const Construtor=Vue.extend(Button)
+  const vm=new Construtor({
+    propsData:{
+      icon:'settings',
+      loading:true
+    }
+  })
+  vm.$mount('#test')
+  const svg=vm.$el.querySelector('svg')
+  const {order}=window.getComputedStyle(svg)
+  expect(order).to.eq('1')
+  // console.log(order);
+}
+
+{
+  const Construtor=Vue.extend(Button)
+  const vm=new Construtor({
+    propsData:{
+      icon:'settings',
+    }
+  })
+  vm.$on('click',function (e) {
+    expect(1).to.eq(1)
+  })
+  vm.$mount()
+  const gButton=vm.$el;
+  gButton.click()
+}
