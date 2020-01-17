@@ -36,18 +36,31 @@
 </style>
 <body>
 <div id="app">
-  <g-button>
-    按钮
-  </g-button>
-  <g-button icon="loading" icon-position="left">
-    按钮
-  </g-button>
-  <g-button icon="settings" icon-position="right">
-    按钮
-  </g-button>
-  <g-icon name="loading"></g-icon>
+  <ldy-button :loading="loading1" @click="loading1=!loading1">
+    按钮1
+  </ldy-button>
+  <ldy-button icon="settings" icon-position="right">
+    按钮2
+  </ldy-button>
+  <ldy-button loading icon-position="left">
+    按钮3
+  </ldy-button>
+  <ldy-button loading icon-position="right">
+    按钮4
+  </ldy-button>
+
+  <ldy-button-group>
+    <ldy-button icon="left">
+      按钮
+    </ldy-button>
+    <div></div>
+    <ldy-button icon="right" icon-position="right">
+      按钮
+    </ldy-button>
+  </ldy-button-group>
+
 </div>
 <script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1616373_kxnb91y1x6k.js"></script>
+<script src="//at.alicdn.com/t/font_1616373_05vpydd1rurw.js"></script>
 </body>
 </html>

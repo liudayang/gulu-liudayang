@@ -1,6 +1,7 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-    <g-icon :name="icon" v-if="icon" class="icon loading"></g-icon>
+  <button class="ldy-button" @click="$emit('click')" :class="{[`icon-${iconPosition}`]:true}">
+    <ldy-icon :name="icon" v-if="icon" class="icon"></ldy-icon>
+    <ldy-icon name="loading" class="loading icon" v-if="loading"></ldy-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -14,6 +15,10 @@
       icon: {
         type: String,
         default: '',
+      },
+      loading: {
+        type: Boolean,
+        default: false,
       },
       iconPosition: {
         type: String,
@@ -38,7 +43,7 @@
   .loading{
     animation: spin 1s infinite linear;
   }
-  .g-button {
+  .ldy-button {
     font-size: var(--font-size);
     height: var(--button-height);
     padding: 0 1em;
