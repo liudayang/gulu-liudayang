@@ -1,6 +1,6 @@
 {
-  "name": "gulu-demo",
-  "version": "1.0.0",
+  "name": "gulu-liudayang-vue",
+  "version": "0.0.1",
   "description": "刘洋的Vue组件库",
   "main": "index.js",
   "scripts": {
