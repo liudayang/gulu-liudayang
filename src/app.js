@@ -15,7 +15,10 @@ new Vue({
     loading3: false
   }
 });
-import {expect} from 'chai';
+import chai from 'chai';
+import spies from 'chai-spies';
+const expect=chai.expect
+chai.use(spies)
 
 {
   // const Construtor=Vue.extend(Button)
@@ -55,10 +58,10 @@ import {expect} from 'chai';
       icon:'settings',
     }
   })
-  vm.$on('click',function (e) {
-    expect(1).to.eq(1)
-  })
   vm.$mount()
+  const spy=chai.spy(function () {})
+  vm.$on('click',spy)
   const gButton=vm.$el;
   gButton.click()
+  expect(spy).to.have.been.called()
 }

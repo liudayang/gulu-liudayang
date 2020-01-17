@@ -1,5 +1,5 @@
 <template>
-    <svg class="g-icon">
+    <svg class="ldy-icon">
       <use :xlink:href="`#ldy-${name}`"></use>
     </svg>
 </template>
@@ -17,7 +17,7 @@
 </script>
 
 <style scoped lang="scss">
-  .g-icon {
+  .ldy-icon {
     width: 1em;
     height: 1em;
   }

@@ -1,7 +1,7 @@
 <template>
   <button class="ldy-button" @click="$emit('click')" :class="{[`icon-${iconPosition}`]:true}">
-    <ldy-icon :name="icon" v-if="icon" class="icon"></ldy-icon>
-    <ldy-icon name="loading" class="loading icon" v-if="loading"></ldy-icon>
+    <ldy-icon class="icon" v-if="icon && !loading" :name="icon"></ldy-icon>
+    <ldy-icon class="loading icon" v-if="loading" name="loading"></ldy-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -9,8 +9,16 @@
 </template>
 
 <script>
+  import ldyIcon from './icon';
+
   export default {
     name: 'ldy_button',
+    components:{
+      ldyIcon
+    },
+    mounted(){
+
+    },
     props: {
       icon: {
         type: String,
