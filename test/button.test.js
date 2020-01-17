@@ -29,8 +29,6 @@ describe('Button', () => {
       }
     }).$mount()
     const useElements = vm.$el.querySelectorAll('use')
-    console.log(vm.$el);
-    console.log(useElements.length);
     expect(useElements.length).to.equal(1)
     expect(useElements[0].getAttribute('xlink:href')).to.equal('#ldy-loading')
     vm.$destroy()
