@@ -1,11 +1,17 @@
 import Vue from 'vue';
 import Button from './button';
 import Icon from './icon';
+import Col from './col';
+import Row from './row';
+import Input from './input';
 import ButtonGroup from './button-group';
 
 Vue.component('ldy-button',Button)
 Vue.component('ldy-icon',Icon)
 Vue.component('ldy-button-group',ButtonGroup)
+Vue.component('ldy-row',Row)
+Vue.component('ldy-col',Col)
+Vue.component('ldy-input',Input)
 
 new Vue({
   el: '#app',

@@ -1,5 +1,5 @@
 <template>
-  <button class="ldy-button" @click="$emit('click')" :class="{[`icon-${iconPosition}`]:true}">
+  <button class="ldy-button aaa" @click="$emit('click')" :class="{[`icon-${iconPosition}`]:true}">
     <ldy-icon class="icon" v-if="icon && !loading" :name="icon"></ldy-icon>
     <ldy-icon class="loading icon" v-if="loading" name="loading"></ldy-icon>
     <div class="content">
@@ -40,6 +40,7 @@
 </script>
 
 <style scoped lang="scss">
+
   @keyframes spin {
     0%{
       transform: rotate(0deg);
@@ -95,6 +96,10 @@
     &:focus {
       outline: none;
     }
+    
+  }
+  .aaqa{
+    background-color: gold;
   }
 
 
